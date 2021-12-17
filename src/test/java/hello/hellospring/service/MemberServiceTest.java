@@ -19,7 +19,7 @@ class MemberServiceTest {
 	//	= new MemoryMemberRepository();
 	
 	/*
-	 * Å×½ºÆ® ¼öÇà Àü 
+	 * ï¿½×½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 
 	 */
 	@BeforeEach
 	public void beforeEach() {
@@ -27,14 +27,14 @@ class MemberServiceTest {
 		memberService = new MemberService(memberRepository);
 	}
 	/*
-	 Å×½ºÆ® ¼öÇà½Ã db°ª ³¯·ÁÁÜ
+	 ï¿½×½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	*/
 	@AfterEach
 	public void afterEach() {
 		memberRepository.clearStore();
 	}
 	@Test
-	void È¸¿ø°¡ÀÔ() {
+	void íšŒì›ê°€ìž…() {
 		//given
 		Member member = new Member();
 		member.setName("spring");
@@ -48,7 +48,7 @@ class MemberServiceTest {
 			.isEqualTo(findMember.getName());
 	}
 	@Test
-	public void Áßº¹_È¸¿ø_¿¹¿Ü() {
+	public void  ì¤‘ë³µ_íšŒì›_ì˜ˆì™¸() {
 		//given
 			Member member1 = new Member();
 			member1.setName("spring");
@@ -61,12 +61,12 @@ class MemberServiceTest {
 			IllegalStateException e = assertThrows(IllegalStateException.class, ()->
 			memberService.join(member2));
 			
-			assertThat(e.getMessage()).isEqualTo("ÀÌ¹Ì Á¸ÀçÇÏ´Â È¸¿øÀÔ´Ï´Ù.");
+			assertThat(e.getMessage()).isEqualTo("ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ È¸ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 		//try {
 		//memberService.join(member2);
-		//fail("¿¹¿Ü°¡ ¹ß»ýÇØ¾ß ÇÕ´Ï´Ù.");
+		//fail("ï¿½ï¿½ï¿½Ü°ï¿½ ï¿½ß»ï¿½ï¿½Ø¾ï¿½ ï¿½Õ´Ï´ï¿½.");
 		//} catch(IllegalStateException e) {
-		//assertThat(e.getMessage()).isEqualTo("ÀÌ¹Ì Á¸ÀçÇÏ´Â È¸¿øÀÔ´Ï´Ù.");
+		//assertThat(e.getMessage()).isEqualTo("ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ È¸ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 		//}
 		//then
 			

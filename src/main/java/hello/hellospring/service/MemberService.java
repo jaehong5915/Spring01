@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 
-@Service
+//@Service
 public class MemberService {
 	private final MemberRepository memberRepository;
-//	= new MemoryMemberRepository();	
+//= new MemoryMemberRepository();	
 	
-	@Autowired //Autowired 있으면 repo로 연결해줌
+	//@Autowired Autowired 있으면 repo로 연결해줌
 	public MemberService(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
 	}
